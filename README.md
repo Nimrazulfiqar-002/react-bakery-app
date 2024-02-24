@@ -33,7 +33,7 @@ Welcome to the Bakery Project! This project is a React-based web application for
 ## Usage
 
 Visit [http://localhost:3000](http://localhost:3000) in your web browser to explore the bakery application. Navigate through different sections like UserHome, Menu, About Us, Contact Us, and the Admin Portal.
-
+http://localhost:3000/#admin
 ## Components
 
 ### UserHome
