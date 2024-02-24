@@ -1,9 +1,5 @@
 # react-bakery-app
 project bakery app
-Certainly! Below is a sample README file for your bakery project. Please customize it as needed for your specific project structure and details.
-
-```markdown
-# Bakery Project
 
 Welcome to the Bakery Project! This project is a React-based web application for managing a bakery's online presence. It includes various components such as UserHome, Menu, About Us, Contact Us, and an Admin Portal.
 
