@@ -1,0 +1,125 @@
+.home-img-1-icon {
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+.home-frame,
+.home-img-1-icon,
+.logo-rectangle {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.logo-rectangle {
+  border-radius: 3px;
+  background: linear-gradient(
+    89.89deg,
+    rgba(0, 0, 0, 0.8),
+    rgba(255, 255, 255, 0.14),
+    rgba(255, 255, 255, 0)
+  );
+  mix-blend-mode: luminosity;
+  z-index: 1;
+}
+.home-frame {
+  margin: 0 !important;
+}
+.logo-1-icon {
+  height: 109px;
+  width: 107px;
+  position: relative;
+  object-fit: cover;
+  z-index: 2;
+}
+.span {
+  color: var(--color-black);
+}
+.admin-portal {
+  margin: 0;
+  align-self: stretch;
+  height: 128px;
+  position: relative;
+  font-size: inherit;
+  font-weight: 500;
+  font-family: inherit;
+  display: inline-block;
+  flex-shrink: 0;
+  z-index: 2;
+}
+.admin-portal-text,
+.sub-frame,
+.sub-frame-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+.admin-portal-text {
+  flex: 1;
+  flex-direction: column;
+  padding: var(--padding-26xl) 0 0;
+  box-sizing: border-box;
+  min-width: 210px;
+}
+.sub-frame,
+.sub-frame-wrapper {
+  flex-direction: row;
+}
+.sub-frame {
+  width: 430px;
+  flex-wrap: wrap;
+  row-gap: 20px;
+}
+.sub-frame-wrapper {
+  width: 514px;
+  flex-shrink: 0;
+}
+.adminportal,
+.adminportal-inner {
+  display: flex;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+.adminportal-inner {
+  width: 514px;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0 0 0 24px;
+  max-width: 100%;
+  margin-top: -42px;
+}
+.adminportal {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-ghostwhite);
+  overflow: hidden;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--padding-125xl) var(--padding-25xl) 214px var(--padding-xl);
+  letter-spacing: normal;
+  text-align: left;
+  font-size: var(--font-size-21xl);
+  color: var(--color-white);
+  font-family: var(--font-inter);
+}
+@media screen and (max-width: 750px) {
+  .admin-portal {
+    font-size: var(--font-size-13xl);
+  }
+}
+@media screen and (max-width: 675px) {
+  .adminportal {
+    padding-right: var(--padding-3xl);
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 450px) {
+  .admin-portal {
+    font-size: var(--font-size-5xl);
+  }
+}

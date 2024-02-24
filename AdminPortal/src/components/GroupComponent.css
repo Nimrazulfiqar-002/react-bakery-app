@@ -1,0 +1,98 @@
+.frame-inner {
+  width: 490px;
+  height: 515.1px;
+  position: relative;
+  background-color: var(--color-gainsboro-200);
+  display: none;
+  max-width: 100%;
+}
+.login {
+  margin: 0;
+  width: 135.5px;
+  height: 66px;
+  position: relative;
+  font-size: inherit;
+  font-weight: 700;
+  font-family: inherit;
+  display: inline-block;
+  flex-shrink: 0;
+  z-index: 1;
+}
+.log-in-text-child,
+.log-in-text-item {
+  border: 0;
+  background-color: transparent;
+  align-self: stretch;
+  height: 48.1px;
+  font-family: var(--font-inter);
+  font-size: var(--font-size-xs);
+  color: var(--color-black);
+  z-index: 1;
+}
+.log-in-text {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 var(--padding-12xs) 0 0;
+  gap: 7px 0;
+}
+.password-group-child {
+  align-self: stretch;
+  height: 48.1px;
+  cursor: pointer;
+  z-index: 1;
+}
+.password-group,
+.rectangle-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.password-group {
+  margin: 0;
+  width: 276px;
+  align-items: flex-start;
+  gap: 14px 0;
+}
+.rectangle-group {
+  flex: 1;
+  background-color: var(--color-gainsboro-200);
+  align-items: center;
+  padding: var(--padding-22xl) var(--padding-xl) var(--padding-202xl)
+    var(--padding-25xl);
+  box-sizing: border-box;
+  gap: var(--gap-3xl);
+  max-width: 100%;
+  z-index: 2;
+  text-align: left;
+  font-size: var(--font-size-21xl);
+  color: var(--color-black);
+  font-family: var(--font-inter);
+}
+@media screen and (max-width: 750px) {
+  .login {
+    font-size: var(--font-size-13xl);
+  }
+}
+@media screen and (max-width: 675px) {
+  .rectangle-group {
+    padding-top: var(--padding-43xl);
+    padding-bottom: var(--padding-125xl);
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 450px) {
+  .login {
+    font-size: var(--font-size-5xl);
+  }
+  .password-group-child {
+    padding-right: var(--padding-xl);
+  }
+  .password-group-child,
+  .rectangle-group {
+    padding-left: var(--padding-xl);
+    box-sizing: border-box;
+  }
+}

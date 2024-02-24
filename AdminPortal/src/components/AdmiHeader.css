@@ -1,0 +1,109 @@
+.textblog {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  margin: 0 !important;
+  top: 0;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  background-color: var(--color-gainsboro-300);
+  border-bottom: 1px solid var(--color-gold);
+  box-sizing: border-box;
+}
+.blog-1-1-icon {
+  height: 250.3px;
+  width: 407.8px;
+  position: relative;
+  object-fit: cover;
+  mix-blend-mode: normal;
+  max-width: 100%;
+  z-index: 1;
+}
+.every-slice-from,
+.what-makes-our {
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0;
+  z-index: 1;
+}
+.what-makes-our {
+  margin: 0;
+  width: 527.6px;
+  height: 28.4px;
+  font-size: inherit;
+  font-style: italic;
+  font-weight: 700;
+  font-family: inherit;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding-right: var(--padding-xl);
+}
+.every-slice-from {
+  align-self: stretch;
+  height: 108.7px;
+  text-justify: auto;
+  font-size: var(--font-size-xs);
+  color: var(--color-black);
+}
+.groupwhat-makes-our-food-speci,
+.textcommitment {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+.textcommitment {
+  align-self: stretch;
+  gap: 27px 0;
+}
+.groupwhat-makes-our-food-speci {
+  width: 670px;
+  padding: 0 0 var(--padding-smi);
+  box-sizing: border-box;
+  min-width: 670px;
+  flex-shrink: 0;
+}
+.admiheader,
+.admiheader1 {
+  /* overflow-y: auto; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-width: 100%;
+}
+.admiheader1 {
+  flex: 1;
+  justify-content: flex-start;
+  padding: var(--padding-13xl) var(--padding-lg) var(--padding-23xl);
+  box-sizing: border-box;
+  position: relative;
+  gap: 0 18px;
+}
+.admiheader {
+  position: absolute;
+  top: 0;
+  left: 186px;
+  width: 1254px;
+  justify-content: center;
+  z-index: 1;
+  text-align: left;
+  font-size: var(--font-size-base);
+  color: var(--color-gray);
+  font-family: var(--font-inter);
+}
+@media screen and (max-width: 1200px) {
+  .blog-1-1-icon,
+  .groupwhat-makes-our-food-speci {
+    flex: 1;
+  }
+  .admiheader1 {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 750px) {
+  .groupwhat-makes-our-food-speci {
+    min-width: 100%;
+  }
+}
