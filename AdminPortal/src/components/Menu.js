@@ -22,11 +22,11 @@ const Menu = ({ addToCart }) => {
          <img src={item.img} alt="" />
          <h3>{names[index]}</h3>
         <div className="price">
-           $15.99<span>20.99</span>
+           RS 1200<span>RS 1500</span>
         </div>
         <button className="btn" onClick={() => {
-           console.log("Adding to cart:", { ...item, name: names[index], price: 15.99 });
-            addToCart({ ...item, name: names[index], price: 15.99 });
+           console.log("Adding to cart:", { ...item, name: names[index], price: 1200 });
+            addToCart({ ...item, name: names[index], price: 1200 });
            }}>
            Add to Cart
         </button>

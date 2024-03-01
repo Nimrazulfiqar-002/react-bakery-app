@@ -25,7 +25,7 @@ const FeatureProduct = () => {
                 </div>
                 <b className="pineapple-upside-down-1599-container">
                   <p className="pineapple-upside-down">Pineapple Upside-Down</p>
-                  <p className="p"> $15.99</p>
+                  <p className="p"> RS 1200</p>
                 </b>
               </div>
             </div>
@@ -42,7 +42,7 @@ const FeatureProduct = () => {
                 <b className="chocolate-fudge-cake-container">
                   <span>
                     <p className="chocolate-fudge-cake">{`Chocolate Fudge Cake `}</p>
-                    <p className="p1"> $15.99</p>
+                    <p className="p1"> RS 1200</p>
                   </span>
                 </b>
               </div>
@@ -59,7 +59,7 @@ const FeatureProduct = () => {
                 <b className="simple-pineapple-cake-container">
                   <span>
                     <p className="simple-pineapple-cake">{`Simple Pineapple Cake                   `}</p>
-                    <p className="p2"> $15.99</p>
+                    <p className="p2"> RS 1200</p>
                   </span>
                 </b>
               </div>
@@ -79,7 +79,7 @@ const FeatureProduct = () => {
                 </div>
                 <b className="coffee-cake-1599-container">
                   <p className="coffee-cake">{`Coffee Cake `}</p>
-                  <p className="p3"> $15.99</p>
+                  <p className="p3"> RS 1200 </p>
                 </b>
               </div>
             </div>

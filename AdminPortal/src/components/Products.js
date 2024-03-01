@@ -39,7 +39,7 @@ const Products = () => {
                 </div>
                 <div className="price">
                   {item.price} 
-                  $15.99 <span>$20.99</span>
+                  RS 1200 <span>RS 1500</span>
                 </div>
               </div>
             </div>
