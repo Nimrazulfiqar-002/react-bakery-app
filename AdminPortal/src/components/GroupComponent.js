@@ -1,9 +1,8 @@
 import { useState, useCallback } from "react";
-import {
-  TextField,
-  Button,
-} from "@mui/material";
+import { TextField, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { signInWithEmailAndPassword } from "firebase/auth"; // Import the signInWithEmailAndPassword function from Firebase Auth
+import { auth } from "./firebase"; // Import the auth service from your Firebase configuration
 import "./GroupComponent.css";
 
 const GroupComponent = () => {
@@ -13,32 +12,36 @@ const GroupComponent = () => {
   const [error, setError] = useState("");
 
   const handleUsernameChange = (event) => {
-    setUsername(event.target.value);
+    setUsername(event.target.value.toLowerCase()); // Convert email to lowercase
   };
 
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
   };
 
-  const handleFormSubmit = useCallback((event) => {
-    event.preventDefault();
+  const handleFormSubmit = useCallback(
+    async (event) => {
+      event.preventDefault();
+      if (!username || !password) {
+        // Display an alert for missing requirements
+        alert("Enter the requirements");
+        return;
+      }
 
-    // Check if both username and password are entered
-    if (!username || !password) {
-      // Display an alert for missing requirements
-      alert("Enter the requirements");
-      return;
-    }
+      try {
+        // Sign in user with email and password
+        await signInWithEmailAndPassword(auth, username, password);
 
-    // Check if username and password are valid
-    if (username === "sara002@gmail.com" , "Sara002@Gmail.Com" && password === "sara123") {
-      // Navigate to the home page on successful login
-      navigate("/home");
-    } else {
-      // Display an error message for invalid credentials
-      setError(alert("Invalid username or password"));
-    }
-  }, [navigate, username, password]);
+        // Redirect user to a different page upon successful login
+        navigate("/home");
+      } catch (error) {
+        // Handle authentication errors
+        setError(alert("Invalid username or password. Please try again."));
+        console.error("Error signing in:", error.message);
+      }
+    },
+    [username, password, navigate]
+  );
 
   return (
     <div className="rectangle-group">
@@ -106,4 +109,3 @@ const GroupComponent = () => {
 };
 
 export default GroupComponent;
-

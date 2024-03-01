@@ -47,7 +47,11 @@ const Navbar = ({ cart, removeFromCart }) => {
   ];
   const handleCheckoutClick = () => {
     // Show alert when the button is clicked
-    alert('We will confirm your order by call.');
+    // alert('We will confirm your order by call.');
+  var phoneNumber = prompt('We will confirm your order by call. Please enter your phone number:');
+  alert('Thank you! We will confirm your order by call to ' + phoneNumber + '.');
+
+
     // You can also perform additional actions, like making an API call to confirm the order.
   };
   return (
