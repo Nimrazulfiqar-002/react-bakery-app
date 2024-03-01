@@ -1,64 +1,51 @@
-# react-bakery-app
-project bakery app
-
 Welcome to the Bakery Project! This project is a React-based web application for managing a bakery's online presence. It includes various components such as UserHome, Menu, About Us, Contact Us, and an Admin Portal.
 
-## Table of Contents
-- [Installation](#installation)
-- [Usage](#usage)
-- [Components](#components)
-- [Login Credentials](#login-credentials)
-- [Technologies Used](#technologies-used)
-- [Contributing](#contributing)
-- [License](#license)
+Table of Contents
+1. Installation
+2. Usage
+3. Components
+4. Login Credentials
+5. Technologies Used
+6. Contributing
+7. License
 
 ## Installation
+Clone the repository:
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/bakery-project.git
-   cd bakery-project
-   ```
+```bash
+git clone https://github.com/yourusername/bakery-project.git
+cd bakery-project
+```
 
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
+Install dependencies:
 
-3. Start the development server:
-   ```bash
-   npm start
-   ```
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm start
+```
 
 ## Usage
+Visit http://localhost:3000 in your web browser to explore the bakery application. Navigate through different sections like UserHome, Menu, About Us, Contact Us, and the Admin Portal.
 
-Visit [http://localhost:3000](http://localhost:3000) in your web browser to explore the bakery application. Navigate through different sections like UserHome, Menu, About Us, Contact Us, and the Admin Portal.
-http://localhost:3000/#admin
 ## Components
-
-### UserHome
-Displays the home page for regular users.
-
-### Menu
-Lists the bakery products available for users to view.
-
-### About Us
-Provides information about the bakery and its history.
-
-### Contact Us
-Displays contact information for users to get in touch with the bakery.
-
-### Admin Portal
-Accessible only to administrators. Requires login with specific credentials.
+1. **UserHome:** Displays the home page for regular users.
+2. **Menu:** Lists the bakery products available for users to view.
+3. **About Us:** Provides information about the bakery and its history.
+4. **Contact Us:** Displays contact information for users to get in touch with the bakery.
+5. **Admin Portal:** Accessible only to administrators. Requires login with specific credentials.
 
 ## Login Credentials
-
 To access the Admin Portal, use the following login credentials:
-- Email: sara002@gmail.com
-- Password: sara123
+
+Email: Admin123@gmail.com
+Password: Admin123
 
 ## Technologies Used
-
 - React
 - JSX
 - State Management (useState, useRef)
@@ -67,12 +54,9 @@ To access the Admin Portal, use the following login credentials:
 - ES6 features
 
 ## Contributing
-
 Contributions are welcome! If you find any issues or have suggestions for improvements, feel free to open an issue or submit a pull request.
 
 ## License
-
-This project is licensed under the [MIT License](LICENSE).
-```
+This project is licensed under the MIT License.
 
 Make sure to replace placeholders like `yourusername` in the clone URL with your actual username and update any other details according to your project structure.
