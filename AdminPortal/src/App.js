@@ -12,6 +12,7 @@ import Footer from "./components/Footer";
 import "./assets/css/style.css";
 import Login from "./Login";
 
+
 const App = () => {
   const [cartItems, setCartItems] = useState([]);
 
