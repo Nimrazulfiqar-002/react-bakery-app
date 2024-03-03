@@ -1,14 +1,14 @@
-import React, { useRef,  } from "react";
+import React, { useRef } from "react";
 import Logo from "../assets/images/logo.png";
-import { collection, addDoc } from "firebase/firestore"; 
-
+import { collection, addDoc } from "firebase/firestore";
 import { db } from "./firebase";
+import Login from "../Login";
+import {Link } from "react-router-dom";
 
 const Navbar = ({ cart, removeFromCart }) => {
- 
   const navbarRef = useRef();
   const searchRef = useRef();
-  const cartRef = useRef(); 
+  const cartRef = useRef();
 
   const navbarHandler = () => {
     navbarRef.current.classList.toggle("active");
@@ -17,14 +17,14 @@ const Navbar = ({ cart, removeFromCart }) => {
   };
 
   const searchHandler = () => {
-    if (searchRef.current){
+    if (searchRef.current) {
       searchRef.current.classList.toggle("active");
     }
-    if(navbarRef.current){
-    navbarRef.current.classList.remove("active");
+    if (navbarRef.current) {
+      navbarRef.current.classList.remove("active");
     }
-    if(cartRef.current){
-    cartRef.current.classList.remove("active");
+    if (cartRef.current) {
+      cartRef.current.classList.remove("active");
     }
   };
 
@@ -38,36 +38,9 @@ const Navbar = ({ cart, removeFromCart }) => {
     if (navbarRef.current) {
       navbarRef.current.classList.remove("active");
     }
-    };
-  
-  const names = [
-    "Pineapple Upside-Down",
-    "Chocolate Fudge Cake",
-    "Simple Pineapple cake",
-    "Marble Cake",
-    "Coffee Cake",
-    "Black Forest Cake"
-  ];
-  // const handleCheckoutClick = () => {
-  //   // Show alert when the button is clicked
-  //   // alert('We will confirm your order by call.');
-  // var phoneNumber = prompt('We will confirm your order by call. Please enter your phone number:');
-  // alert('Thank you! We will confirm your order by call to ' + phoneNumber + '.');
-  //   // You can also perform additional actions, like making an API call to confirm the order.
-  //   try {
-  //     const docRef = await addDoc(collection(db, "customerinfo"), {
-  //       first: "Ada",
-  //       last: "Lovelace",
-  //       born: 1815
-  //     });
-  //     console.log("Document written with ID: ", docRef.id);
-  //   } catch (e) {
-  //     console.error("Error adding document: ", e);
-  //   }
-      
-  // };
+  };
+
   const handleCheckoutClick = async () => {
-    // Show prompt to get user's phone number
     var phoneNumber = prompt("We will confirm your order by call. Please enter your phone number:");
     alert('Thank you! We will confirm your order by call to ' + phoneNumber + '.');
 
@@ -80,9 +53,7 @@ const Navbar = ({ cart, removeFromCart }) => {
     } catch (e) {
       console.error("Error adding document: ", e);
     }
-    
   };
-
 
   return (
     <header className="header">
@@ -97,13 +68,15 @@ const Navbar = ({ cart, removeFromCart }) => {
         <a href="#review">review</a>
         <a href="#contact">contact</a>
         <a href="#blogs">blogs</a>
-        <a href="#admin">Adminportal</a>
+       <a href="#admin">Adminportal</a>
+        
       </nav>
       <div className="icons">
         <div className="fas fa-search" id="search-btn" onClick={searchHandler}></div>
         <div className="fas fa-shopping-cart" id="cart-btn" onClick={cartHandler}>{cart.length}</div>
         <div className="fas fa-bars" id="menu-btn" onClick={navbarHandler}></div>
       </div>
+      
       <div className="cart-items-container" ref={cartRef}>
       <div><center><h2>Shopping Cart</h2></center></div>
         {cart.map((item, index) => (
