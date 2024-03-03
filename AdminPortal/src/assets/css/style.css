@@ -66,6 +66,7 @@ section {
   color: #fff;
   background: #ffc107;
   cursor: pointer;
+  margin-bottom: 10px;
 }
 
 .btn:hover {
@@ -162,6 +163,8 @@ section {
   width: 35rem;
   background: #fff;
   padding: 0 1.5rem;
+  overflow-y: auto;
+  max-height: 506px;
 }
 
 .header .cart-items-container.active {

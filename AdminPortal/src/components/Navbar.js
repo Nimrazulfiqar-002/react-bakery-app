@@ -1,5 +1,8 @@
 import React, { useRef,  } from "react";
 import Logo from "../assets/images/logo.png";
+import { collection, addDoc } from "firebase/firestore"; 
+
+import { db } from "./firebase";
 
 const Navbar = ({ cart, removeFromCart }) => {
  
@@ -45,15 +48,42 @@ const Navbar = ({ cart, removeFromCart }) => {
     "Coffee Cake",
     "Black Forest Cake"
   ];
-  const handleCheckoutClick = () => {
-    // Show alert when the button is clicked
-    // alert('We will confirm your order by call.');
-  var phoneNumber = prompt('We will confirm your order by call. Please enter your phone number:');
-  alert('Thank you! We will confirm your order by call to ' + phoneNumber + '.');
+  // const handleCheckoutClick = () => {
+  //   // Show alert when the button is clicked
+  //   // alert('We will confirm your order by call.');
+  // var phoneNumber = prompt('We will confirm your order by call. Please enter your phone number:');
+  // alert('Thank you! We will confirm your order by call to ' + phoneNumber + '.');
+  //   // You can also perform additional actions, like making an API call to confirm the order.
+  //   try {
+  //     const docRef = await addDoc(collection(db, "customerinfo"), {
+  //       first: "Ada",
+  //       last: "Lovelace",
+  //       born: 1815
+  //     });
+  //     console.log("Document written with ID: ", docRef.id);
+  //   } catch (e) {
+  //     console.error("Error adding document: ", e);
+  //   }
+      
+  // };
+  const handleCheckoutClick = async () => {
+    // Show prompt to get user's phone number
+    var phoneNumber = prompt("We will confirm your order by call. Please enter your phone number:");
+    alert('Thank you! We will confirm your order by call to ' + phoneNumber + '.');
 
-
-    // You can also perform additional actions, like making an API call to confirm the order.
+    try {
+      const docRef = await addDoc(collection(db, "customerinfo"), {
+        phoneNumber: phoneNumber,
+        cart: cart,
+      });
+      console.log("Document written with ID: ", docRef.id);
+    } catch (e) {
+      console.error("Error adding document: ", e);
+    }
+    
   };
+
+
   return (
     <header className="header">
       <a href="#" className="logo">
@@ -71,43 +101,35 @@ const Navbar = ({ cart, removeFromCart }) => {
       </nav>
       <div className="icons">
         <div className="fas fa-search" id="search-btn" onClick={searchHandler}></div>
-        <div className="fas fa-shopping-cart" id="cart-btn" onClick={cartHandler}></div>
+        <div className="fas fa-shopping-cart" id="cart-btn" onClick={cartHandler}>{cart.length}</div>
         <div className="fas fa-bars" id="menu-btn" onClick={navbarHandler}></div>
       </div>
       <div className="cart-items-container" ref={cartRef}>
+      <div><center><h2>Shopping Cart</h2></center></div>
         {cart.map((item, index) => (
           <div className="cart-item" key={index}>
             <span className="fas fa-times" onClick={() => removeFromCart(index)}></span>
             <img src={item.img} alt="" />
-            {/* <div className="content">
-              <h3>cart item 01</h3>
-              <div className="price">$15.99/-</div>
-            </div> */}
             <div className="cart">
-              <h2>Shopping Cart</h2>
-               <div className="content">
-                  {cart.map((cartItem, index) => (
+
                   <div className="content" key={index}>
-                     <h3>{cartItem.name}</h3>
+                     <h3>{item.name}</h3>
                       <div className="price">
-                        {cartItem.price ? `$${cartItem.price.toFixed(2)}` : 'Price not available'}
+                        {item.price ? `${item.price.toFixed(2)}` : 'Price not available'}
                       </div>
                   </div>
-                   ))}
-                 </div>
-    
-                <div className="total">
-                 <h3>Total Price:</h3>
-                   <div className="price">
-                    {cart.reduce((total, cartItem) => total + (cartItem.price || 0), 0).toFixed(2)}
-                   </div>
-                 </div>
             </div>
 
 {/*  */}
           </div>
         ))}
-        
+         <div className="total">
+                 <h3>Total Price:</h3>
+                   <div className="price">
+                    {cart.reduce((total, cartItem) => total + (cartItem.price || 0), 0).toFixed(2)}
+                   </div>
+           </div>
+          <div>Total Items: {cart.length}</div> 
         
         <button className="btn" onClick={handleCheckoutClick}> checkout now</button>
       </div>

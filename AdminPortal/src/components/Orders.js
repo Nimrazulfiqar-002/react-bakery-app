@@ -1,10 +1,38 @@
+import { useState, useEffect } from "react";
 import { Button } from "@mui/material";
 import "./Orders.css";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "./firebase";
 
 const Orders = () => {
-   const handlePrint = () => {
-      window.print();
+  const [customerData, setCustomerData] = useState([]);
+
+  // const handlePrint = () => {
+  //   window.print();
+  // };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const querySnapshot = await getDocs(collection(db, "customerinfo"));
+        const data = [];
+
+        querySnapshot.forEach((doc) => {
+          data.push({
+            id: doc.id,
+            ...doc.data(),
+          });
+        });
+
+        setCustomerData(data);
+      } catch (error) {
+        console.error("Error getting documents: ", error);
+      }
     };
+
+    fetchData();
+  }, []); // Empty dependency array to run the effect only once when the component mounts
+
   return (
     <div className="orders">
       <div className="order-instances">
@@ -12,27 +40,27 @@ const Orders = () => {
           <div className="rectangle-receiver" />
           <div className="receipt">
             <div className="rectangle-parent">
-              <div className="frame-child" />
-              <h2 className="receipt1">Receipt</h2>
-              <div className="delivery-frame-parent">
-                <div className="delivery-frame">
-                  <div className="chocolate-cake">Chocolate cake</div>
-                  <div className="no-of-products-delivered">
-                    <div className="shipping">{`Shipping: $5.0`}</div>
-                  </div>
-                </div>
-                <div className="total-section">
-                  <div className="cart-instances">
-                    <div className="total">Total</div>
-                    <div className="order-summary">
-                      <div className="rectangle-vector">$15.0</div>
+              <div className="frame-child">
+                <h2 className="receipt1">Orders List</h2>
+                {/* Render customer data dynamically */}
+                <div className="scrollable-container">
+                  {customerData.map((customer) => (
+                    <div key={customer.id}>
+                      <p>Items in cart:</p>
+                      <ul>
+                        {customer.cart.map((item, index) => (
+                          <li key={index}>{item.name} - {item.price.toFixed(2)}</li>
+                        ))}
+                      </ul>
+                      <p>Phone number: {customer.phoneNumber}</p>
+                      {/* Add more fields as needed */}
                     </div>
-                  </div>
-                  <div className="print-receipt-text1">
-                    <Button variant="contained" color="primary" onClick={handlePrint}>
-                      Print Receipt
-                    </Button>
-                  </div>
+                  ))}
+                </div>
+                <div className="print-receipt-text1">
+                  {/* <Button variant="contained" color="primary" onClick={handlePrint}>
+                    Print Receipt
+                  </Button> */}
                 </div>
               </div>
             </div>
@@ -47,7 +75,7 @@ const Orders = () => {
         <div className="group-instances">
           <div className="no-of-orders">
             <div className="cart-item-rectangles">
-              <div className="feature-product-instance1" />
+              {/* <div className="feature-product-instance1" /> */}
               <div className="no-of-product">No of product deliver</div>
             </div>
             <div className="orders-deliver-rect">10</div>
