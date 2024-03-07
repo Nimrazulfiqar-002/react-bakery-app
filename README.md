@@ -1,3 +1,4 @@
+https://react-bakery-app-2c9a.vercel.app
 Welcome to the Bakery Project! This project is a React-based web application for managing a bakery's online presence. It includes various components such as UserHome, Menu, About Us, Contact Us, and an Admin Portal.
 
 Table of Contents
